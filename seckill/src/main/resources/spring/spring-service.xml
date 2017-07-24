@@ -7,14 +7,11 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-    <!--service配置分三步1.扫描包下的所有service类加载为bean2.开启事务3.基于注解的事务-->
+    <!--1.包扫描2.开启事务3.开启注解-->
     <context:component-scan base-package="xin.ncuflag.service"/>
-
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <!--注入数据库连接池-->
-        <property name="dataSource" ref="dataSource"/>
-
+    <bean id="transactiOonManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <tx:annotation-driven transaction-manager="transactiOonManager"/>
 </beans>

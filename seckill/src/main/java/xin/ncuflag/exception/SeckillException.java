@@ -6,14 +6,11 @@ import xin.ncuflag.Enum.SeckillEnum;
  * Created by vince on 2017/7/22.
  */
 public class SeckillException extends RuntimeException {
-    private int code;
-    private String errorInfo;
     private SeckillEnum seckillEnum;
 
     public SeckillException(SeckillEnum seckillEnum) {
         super(seckillEnum.getStateInfo());
-        this.code = seckillEnum.getCode();
-        this.errorInfo = seckillEnum.getStateInfo();
+        this.seckillEnum=seckillEnum;
 
     }
 
@@ -24,4 +21,12 @@ public class SeckillException extends RuntimeException {
     public void setSeckillEnum(SeckillEnum seckillEnum) {
         this.seckillEnum = seckillEnum;
     }
+    public SeckillException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }
+
+
+
+
+

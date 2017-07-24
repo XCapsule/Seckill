@@ -56,7 +56,7 @@ public class SeckillServiceImpl implements SeckillService {
         }
         String md5=getMD5(id);
         Exposer exposer=new Exposer(true,md5,id);
-        return null;
+        return exposer;
     }
 //执行秒杀
     @Transactional
@@ -71,7 +71,7 @@ public class SeckillServiceImpl implements SeckillService {
             if (reduceNumber <= 0) {
                 throw new SeckillException(SeckillEnum.SECKILL_CLOSE);
             }else {
-                int updateCount = successKilledDao.insertSuccessKilled(id, userPhone);
+                int updateCount = successKilledDao.insertSuccessKilled(id, userPhone,killTime);
                 if (updateCount <= 0) {
                     throw new SeckillException(SeckillEnum.REPEAT_WRITTEN);
                 }else {

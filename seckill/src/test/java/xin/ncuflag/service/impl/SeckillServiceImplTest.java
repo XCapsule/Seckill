@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import xin.ncuflag.dto.Exposer;
 import xin.ncuflag.entity.SecKill;
 import xin.ncuflag.service.SeckillService;
 
@@ -42,10 +43,13 @@ public class SeckillServiceImplTest {
 
     @Test
     public void getExposerById() throws Exception {
+        Exposer exposer=seckillService.getExposerById(1000L);
+        logger.info("exposer={}",exposer.toString());
     }
 
     @Test
     public void executeSeckill() throws Exception {
+
     }
 
 }

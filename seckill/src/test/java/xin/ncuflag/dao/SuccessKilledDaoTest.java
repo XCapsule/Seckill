@@ -18,10 +18,10 @@ import static org.junit.Assert.*;
 public class SuccessKilledDaoTest {
     @Resource
     private SuccessKilledDao successKilledDao;
-    @Test
-    public void insertSuccessKilled() throws Exception {
-        successKilledDao.insertSuccessKilled(1003L,13236L);
-    }
+//    @Test
+//    public void insertSuccessKilled() throws Exception {
+//        successKilledDao.insertSuccessKilled(1003L,13236L);
+//    }
 
     @Test
     public void queryByIdWithSecKill() throws Exception {

@@ -8,9 +8,9 @@ public enum SeckillEnum {
     INNER_ERROR(0,"系统错误"),
     CHANGE_DATE(-1,"数据复写"),
     SECKILL_CLOSE(-2,"秒杀关闭"),
-    REPEAT_WRITTEN(-3,"重复秒杀");
+    REPEAT_WRITTEN(-3,"重复秒杀"),
 
-
+    NULL_ID(-101,"id为空");
     private int code;
     private String stateInfo;
     SeckillEnum(int code,String stateInfo) {
