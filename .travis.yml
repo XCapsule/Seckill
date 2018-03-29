@@ -1,5 +1,5 @@
 language: java
-sudo: false
+sudo: true
 
 jdk:
   - oraclejdk8
@@ -8,6 +8,16 @@ jdk:
 services:
   - mysql
 
+before_install:
+  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('abc123_') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
+  - sudo service mysql restart
+
 before_script:
-  - mysql -u root -e 'CREATE DATABASE seckill;'
-  - mysql -u root seckill < SQL/seckill.sql
+  - mysql -u travis -e 'CREATE DATABASE IF NOT EXISTS seckill;'
+  - mysql -u travis seckill < SQL/seckill.sql
+  - mysql -u root -e "CREATE USER 'newmedia'@'%' IDENTIFIED BY 'abc123_';"
+  - mysql -u root -e "grant all privileges on *.* to 'bill'@'%' with grant option;"
+
+
+env:
+  - DB=mysql
