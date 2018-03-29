@@ -4,3 +4,7 @@ sudo: false
 jdk:
   - oraclejdk8
   - openjdk8
+
+before_script:
+  - mysql -u root -e 'CREATE DATABASE seckill;'
+  - mysql -u root seckill < SQL/seckill.sql

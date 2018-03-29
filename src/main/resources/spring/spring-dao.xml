@@ -11,9 +11,9 @@
     <!--1.datasource-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://139.224.132.164:3306/seckill" />
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/seckill" />
         <property name="user" value="root"/>
-        <property name="password" value="123"/>
+        <property name="password" value=""/>
 
         <!--c3p0-->
         <property name="minPoolSize" value="3"/>
