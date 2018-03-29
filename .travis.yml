@@ -5,6 +5,9 @@ jdk:
   - oraclejdk8
   - openjdk8
 
+services:
+  - mysql
+
 before_script:
   - mysql -u root -e 'CREATE DATABASE seckill;'
   - mysql -u root seckill < SQL/seckill.sql
