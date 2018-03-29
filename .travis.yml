@@ -9,10 +9,9 @@ services:
   - mysql
 
 before_install:
-  - mysql -u travis -e 'CREATE DATABASE IF NOT EXISTS seckill;'
-  - mysql -u travis seckill < SQL/seckill.sql
-  - mysql -u root -e "CREATE USER 'newmedia'@'%' IDENTIFIED BY 'abc123_';"
-  - mysql -u root -e "grant all privileges on *.* to 'newmedia'@'%' with grant option;"
+  - mysql -u root -e 'CREATE DATABASE IF NOT EXISTS seckill;'
+  - mysql -u root seckill < SQL/seckill.sql
+  - mysql -u root -e "grant all privileges on *.* to 'root'@'%' with grant option;"
   - sudo service mysql restart
 
 
