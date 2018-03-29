@@ -13,7 +13,7 @@
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
         <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/seckill" />
         <property name="user" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="abc123_"/>
 
         <!--c3p0-->
         <property name="minPoolSize" value="3"/>
